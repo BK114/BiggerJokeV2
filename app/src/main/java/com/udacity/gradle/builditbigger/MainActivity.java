@@ -25,15 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button jokeButton = findViewById(R.id.btn_joke);
-        jokeButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                getJokes();
-            }
-        });
-
     }
 
 
@@ -59,11 +50,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void getJokes() {
-        new EndpointsAsyncTask().execute(getApplicationContext());
-
-
     }
 }
