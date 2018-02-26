@@ -35,7 +35,20 @@ public class MainActivityFragment extends Fragment {
                 .build();
         mAdView.loadAd(adRequest);
 
+        final Button jokeButton = root.findViewById(R.id.btn_joke); 
+        jokeButton.setOnClickListener(new View.OnClickListener() { 
+ 
+           @Override 
+           public void onClick(View v) { 
+                getJokes(); 
+             } 
+     }); 
 
         return root;
+    }
+    
+    public void getJokes() {
+        new EndpointsAsyncTask().execute(getActivity());
+
     }
 }
